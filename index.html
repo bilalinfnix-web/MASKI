@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماسكي | متجر رقمية استثنائي</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- شريط التحميل -->
+    <div class="loader">
+        <div class="loader-logo">
+            <span class="maski-text">ماسكي</span>
+            <div class="loader-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- شريط التنقل العلوي -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1 class="maski-logo">ماسكي</h1>
+                <span class="tagline">متجر رقمية استثنائي</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#categories">الأقسام</a></li>
+                    <li><a href="#offers">العروض</a></li>
+                    <li><a href="#about">حول المتجر</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="btn login-btn" onclick="window.location.href='login.html'">
+                    <i class="fas fa-user-shield"></i> لوحة التحكم
+                </button>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم الشرائح المتحركة -->
+    <section class="hero-section" id="home">
+        <div class="hero-background">
+            <div class="particles-container" id="particles"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h2 class="hero-title animate-pop">
+                مرحباً بك في <span class="highlight">ماسكي</span>
+            </h2>
+            <p class="hero-subtitle animate-slide-up">
+                وجهتك الأولى للحصول على كل ما تحتاجه في عالم الألعاب والخدمات الرقمية
+            </p>
+            <button class="btn btn-primary animate-pulse" onclick="scrollToCategories()">
+                اكتشف أقسامنا <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأقسام القابلة للسحب -->
+    <section class="categories-section" id="categories">
+        <div class="section-header">
+            <h2 class="section-title animate-text">أقسام المتجر</h2>
+            <p class="section-subtitle">اختر القسم الذي تريده من خلال التمرير يميناً أو يساراً</p>
+        </div>
+        
+        <div class="categories-container">
+            <div class="scroll-arrow left-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            
+            <div class="categories-track" id="categoriesTrack">
+                <!-- القسم 1: حسابات فري فاير -->
+                <div class="category-card active" data-category="freefire">
+                    <div class="category-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="category-title">حسابات فري فاير</h3>
+                    <p class="category-description">
+                        حسابات فري فاير مميزة بمستويات مختلفة وبأسعار تنافسية
+                    </p>
+                    <div class="category-badge">الأكثر مبيعاً</div>
+                    <button class="btn btn-outline view-category-btn" data-category="freefire">
+                        عرض المنتجات <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <!-- القسم 2: عروض الشحن -->
+                <div class="category-card" data-category="charging">
+                    <div class="category-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="category-title">عروض الشحن</h3>
+                    <p class="category-description">
+                        أكواد جواهر فري فاير وشحن رصيد للعب بأفضل الأسعار
+                    </p>
+                    <div class="category-badge">عروض حصرية</div>
+                    <button class="btn btn-outline view-category-btn" data-category="charging">
+                        عرض المنتجات <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <!-- القسم 3: خدمات وسائل التواصل -->
+                <div class="category-card" data-category="social">
+                    <div class="category-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3 class="category-title">خدمات التواصل الاجتماعي</h3>
+                    <p class="category-description">
+                        خدمات زيادة متابعين، لايكات، تعليقات ومشاهدات لكل المنصات
+                    </p>
+                    <div class="category-badge">متنوعة</div>
+                    <button class="btn btn-outline view-category-btn" data-category="social">
+                        عرض المنتجات <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="scroll-arrow right-arrow">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+        </div>
+        
+        <div class="categories-indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section class="products-section">
+        <div class="section-header">
+            <h2 class="section-title animate-text">منتجات <span id="currentCategoryTitle">حسابات فري فاير</span></h2>
+            <div class="section-filters">
+                <select class="filter-select" id="sortFilter">
+                    <option value="newest">الأحدث أولاً</option>
+                    <option value="price-low">السعر: منخفض إلى مرتفع</option>
+                    <option value="price-high">السعر: مرتفع إلى منخفض</option>
+                    <option value="popular">الأكثر شعبية</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="products-container" id="productsContainer">
+            <!-- المنتجات سيتم تحميلها ديناميكياً -->
+            <div class="loading-products">
+                <div class="spinner"></div>
+                <p>جاري تحميل المنتجات...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم العروض الخاصة -->
+    <section class="offers-section" id="offers">
+        <div class="section-header">
+            <h2 class="section-title animate-text">عروض اليوم</h2>
+            <p class="section-subtitle">عروض محدودة بأسعار تنافسية</p>
+        </div>
+        
+        <div class="offers-container">
+            <div class="offer-card featured">
+                <div class="offer-badge">عرض خاص</div>
+                <div class="offer-content">
+                    <h3 class="offer-title">خصم 10% على أول عملية شراء</h3>
+                    <p class="offer-description">استخدم الكود: MASKY10 للحصول على خصم 10% على أول عملية شراء من متجر ماسكي</p>
+                    <div class="offer-timer">
+                        <div class="timer-title">ينتهي العرض خلال:</div>
+                        <div class="timer" id="offerTimer">
+                            <div class="timer-item">
+                                <span class="timer-value" id="hours">24</span>
+                                <span class="timer-label">ساعة</span>
+                            </div>
+                            <div class="timer-item">
+                                <span class="timer-value" id="minutes">00</span>
+                                <span class="timer-label">دقيقة</span>
+                            </div>
+                            <div class="timer-item">
+                                <span class="timer-value" id="seconds">00</span>
+                                <span class="timer-label">ثانية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- إعلانات A-ADS -->
+    <section class="ads-section">
+        <div class="container">
+            <div class="ad-container ad-top">
+                <!-- مكان إعلان A-ADS -->
+                <div id="a-ads-top" class="ad-placeholder">
+                    <span>إعلان A-ADS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدفع -->
+    <section class="payment-section">
+        <div class="section-header">
+            <h2 class="section-title animate-text">طرق الدفع الآمنة</h2>
+            <p class="section-subtitle">نوفر لك طرق دفع آمنة وسهلة</p>
+        </div>
+        
+        <div class="payment-methods">
+            <div class="payment-method">
+                <div class="payment-icon">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+                <h3 class="payment-title">NowPayments</h3>
+                <p class="payment-description">
+                    بوابة دفع متعددة العملات الرقمية تشمل Bitcoin، Ethereum وغيرها
+                </p>
+            </div>
+            
+            <div class="payment-method">
+                <div class="payment-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="payment-title">بطاقات الائتمان</h3>
+                <p class="payment-description">
+                    قبول جميع أنواع البطاقات الائتمانية والدبت
+                </p>
+            </div>
+            
+            <div class="payment-method">
+                <div class="payment-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3 class="payment-title">تحويل بنكي</h3>
+                <p class="payment-description">
+                    تحويل مباشر إلى الحسابات البنكية المحلية
+                </p>
+            </div>
+        </div>
+        
+        <div class="payment-security">
+            <div class="security-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>دفع آمن 100%</span>
+            </div>
+            <div class="security-badge">
+                <i class="fas fa-lock"></i>
+                <span>تشفير SSL</span>
+            </div>
+            <div class="security-badge">
+                <i class="fas fa-user-shield"></i>
+                <span>حماية خصوصية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- إعلانات Adstera -->
+    <section class="ads-section">
+        <div class="container">
+            <div class="ad-container ad-middle">
+                <!-- مكان إعلان Adstera -->
+                <div id="adstera-middle" class="ad-placeholder">
+                    <span>إعلان Adstera</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3 class="maski-logo">ماسكي</h3>
+                        <p class="footer-tagline">وجهتك الرقمية المميزة</p>
+                    </div>
+                    <p class="footer-about">
+                        متجر ماسكي يوفر لك أفضل الخدمات الرقمية والألعاب بأعلى جودة وأسعار تنافسية
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#categories">الأقسام</a></li>
+                        <li><a href="#offers">العروض</a></li>
+                        <li><a href="#about">حول المتجر</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">القسم الإداري</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">لوحة التحكم</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">معلومات الاتصال</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> info@maski-store.com</li>
+                        <li><i class="fas fa-phone"></i> +966 55 123 4567</li>
+                        <li><i class="fas fa-clock"></i> متاح 24/7 للدعم</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>جميع الحقوق محفوظة &copy; <span id="currentYear">2024</span> - متجر ماسكي</p>
+                </div>
+                <div class="footer-badges">
+                    <span class="footer-badge"><i class="fas fa-check-circle"></i> دفع آمن</span>
+                    <span class="footer-badge"><i class="fas fa-shipping-fast"></i> توصيل فوري</span>
+                    <span class="footer-badge"><i class="fas fa-headset"></i> دعم فني</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نافذة المنتج -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <!-- محتوى المنتج سيتم تحميله ديناميكياً -->
+            </div>
+        </div>
+    </div>
+
+    <!-- أكواد الإعلانات -->
+    <script>
+        // كود A-ADS
+        const aAdsCode = `
+        <!-- A-ADS Top Code -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"><\/script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        <\/script>
+        `;
+        
+        // كود Adstera
+        const adsteraCode = `
+        <!-- Adstera Middle Code -->
+        <script type="text/javascript">
+            var adstera = window.adstera || [];
+            adstera.push({ pid: XXXXXXXXXX, placement: XXXXXXXXXX });
+            (function() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.adstera.com/js/ads.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            })();
+        <\/script>
+        `;
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/payments.js"></script>
+</body>
+</html>
